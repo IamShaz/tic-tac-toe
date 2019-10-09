@@ -3,10 +3,11 @@
     let turn = 0;
     let isFull = [];
 
-    const newGame = () => {  
+    const newGame = () => {
         turn = 0;    
         isFull = [];        
         for(let i = 0; i < squares.length; i++) {
+            squares[i].classList.remove('p1', 'p2');
             squares[i].innerHTML = '';            
         }
     }
@@ -53,23 +54,31 @@
     const markSquare = (square, val) => {
         let mark = '';
         if(turn == 0) {
-            mark = 'X';
+            mark = 'X';  
+            square.classList.add('p1');  
             square.innerHTML = mark;
-            findWinner(val, mark);            
+            setTimeout(() => {
+                findWinner(val, mark);  
+            }, 400);
+                      
         } else {
             mark = 'O';
+            square.classList.add('p2');
             square.innerHTML = mark;
-            findWinner(val, mark);
+            setTimeout(() => {
+                findWinner(val, mark);
+            }, 400);
         }
     }
 
     const checkSquare = (square, val) => {
-        square.innerHTML == '' ? markSquare(square, val) :alert('Select empty square');
+        square.innerHTML == '' ? markSquare(square, val) : alert('Select empty square');
     }
 
-    for(let i = 0; i < squares.length; i++) {        
+    for(let i = 0; i < squares.length; i++) {     
         squares[i].addEventListener('click', function() {
             checkSquare(squares[i],i);
         });
     }
+
 })();
