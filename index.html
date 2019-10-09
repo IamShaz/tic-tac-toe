@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tic Tac Toe Game</title>
-    <style>
-    #board { display: flex; justify-content: center; }
-    .square { border: 1px solid #000; width: 5em; height: 5em; }
-    </style>
+    <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+    <div id="heading">
+        <h1>Tic Tac Toe</h1>
+        <p>Player 1 goes first. Select a square to begin.</p>        
+    </div>
     <div id="board">
         <div class="row">
             <div class="square"></div>
@@ -26,7 +28,7 @@
             <div class="square"></div>
             <div class="square"></div>
             <div class="square"></div>
-        </div>        
+        </div>
     </div>
     <script src="./script.js"></script>
 </body>
